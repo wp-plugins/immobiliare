@@ -1,14 +1,14 @@
 === Plugin Name ===
 Contributors: RSW Studio, Matteo Testoni
 Donate link: http://www.realizzazionesitiweb20.it
-Tags: immobiliare, agenzia immobiliare, imprese edili, annunci immobiliari, real estate, properties
+Tags: immobiliare, agenzia immobiliare, agenzie immobiliari, impresa edile, imprese edili, annunci immobiliari, real estate, realestate, apartment, real estate directory, realtor, properties
 Requires at least: 4.0.0
 Tested up to: 4.1
 Stable tag: 4.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Plugin per la gestione di immobili per agenzie immobiliari
+Plugin per la gestione di immobili per agenzie immobiliari e imprese edili
 
 == Description ==
 
@@ -27,11 +27,11 @@ Consente inoltre l'inserimento di gallerie, planimetrie, allegati pdf per capito
 
 == Installation ==
 
-ENG
+= ENG =
 1. Upload 'immobiliare' directory  to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 
-ITA
+= ITA =
 1. Carica la cartella 'immobiliare'  via ftp su '/wp-content/plugins/'
 2. Attiva il plugin attraverso la sezione 'Plugins' dentro all'area riservata WordPress
 
@@ -49,13 +49,13 @@ ITA
 = 1.1 =
 * aggiunti campi aggiuntivi in immobile
 
+= 1.2 =
+* sistemati i campi locali di numero locali
 
 
-== Caratteristiche / Features ==
+== Caratteristiche del plugin / Features of the plugin ==
 
-Caratteristiche del plugin / Features of the plugin:
-
-ENG
+= ENG =
 
 1. Property Management
 2. definition of square meters, price
@@ -66,7 +66,7 @@ ENG
 7. pdf forms of real estate or other specifications
 8. Detailed features of annunici estate
 
-ITA
+= ITA =
 1. gestione immobili
 2. definizione di mq, prezzo
 3. gestione proprietà
