@@ -93,6 +93,29 @@ function your_prefix_register_meta_boxes( $meta_boxes )
 				'min'  => 0,
 				'step' => 1,
 			),
+
+			array(
+				'name'     => __( 'Posto auto', 'meta-box' ),
+				'id'       => "{$prefix}postoauto",
+				'type'     => 'select',
+				// Array of 'value' => 'Label' pairs for select box
+				'options'  => array(
+					'-' => __( '-', 'meta-box' ),
+					'box singolo' => __( 'box singolo', 'meta-box' ),
+					'box doppio' => __( 'box doppio', 'meta-box' ),
+					'box triplo' => __( 'box triplo', 'meta-box' ),
+					'box quadruplo' => __( 'box quadruplo', 'meta-box' ),
+					'posto auto coperto' => __( 'posto auto coperto', 'meta-box' ),
+					'posto auto scoperto' => __( 'posto auto scoperto', 'meta-box' ),
+					'posto auto condominiale' => __( 'posto auto condominiale', 'meta-box' ),
+					'facilità di parcheggio' => __( 'facilità di parcheggio', 'meta-box' ),
+				),
+				// Select multiple values, optional. Default is false.
+				'multiple'    => false,
+				'std'         => 'piano terra',
+				'placeholder' => __( 'Seleziona il piano', 'meta-box' ),
+			),
+      
 			array(
 				'name'     => __( 'Cucina', 'meta-box' ),
 				'id'       => "{$prefix}cucina",
@@ -113,7 +136,7 @@ function your_prefix_register_meta_boxes( $meta_boxes )
 				'id'       => "{$prefix}balcone",
 				'type'     => 'select',
 				'options'  => array(
-					'nessuno' => __( '-', 'meta-box' ),
+					'-' => __( '-', 'meta-box' ),
 					'1' => __( '1', 'meta-box' ),
 					'2' => __( '2', 'meta-box' ),
 					'3' => __( '3', 'meta-box' ),
@@ -143,6 +166,12 @@ function your_prefix_register_meta_boxes( $meta_boxes )
 			array(
 				'name' => __( 'Cantina', 'meta-box' ),
 				'id'   => "{$prefix}cantina",
+				'type' => 'checkbox',
+				'std'  => 0,
+			),
+			array(
+				'name' => __( 'Solaio', 'meta-box' ),
+				'id'   => "{$prefix}solaio",
 				'type' => 'checkbox',
 				'std'  => 0,
 			),
@@ -275,6 +304,7 @@ function your_prefix_register_meta_boxes( $meta_boxes )
 				'options'  => array(
 					'mensili' => __( 'mensili', 'meta-box' ),
 					'annuali' => __( 'annuali', 'meta-box' ),
+					'nessuna' => __( 'nessuna', 'meta-box' ),
 				),
 				// Select multiple values, optional. Default is false.
 				'multiple'    => false,

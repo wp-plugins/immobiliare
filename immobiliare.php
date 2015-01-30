@@ -3,14 +3,14 @@
  * Plugin Name: Immobiliare
  * Plugin URI: http://www.realizzazionesitiweb20.it
  * Description: gestionale immobiliare per wordpress
- * Version: 1.0
+ * Version: 1.2.0
  * Author: RSW Studio
  * Author URI: http://www.realizzazionesitiweb20.it
  * License: GPL2
  */
  
   defined('ABSPATH') or die("No script kiddies please!");
-	define( 'Immobiliare_Version', '1.0.0' );
+	define( 'Immobiliare_Version', '1.2.0' );
 	define( 'Immobiliare_Directory', dirname( plugin_basename( __FILE__ ) ) );
 	define( 'Immobiliare_Path', plugin_dir_path( __FILE__ ) );
 	define( 'Immobiliare_URL', plugin_dir_url( __FILE__ ) );
