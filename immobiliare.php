@@ -3,7 +3,7 @@
  * Plugin Name: Immobiliare
  * Plugin URI: http://www.realizzazionesitiweb20.it
  * Description: gestionale immobiliare per wordpress
- * Version: 1.2.0
+ * Version: 1.3.0
  * Author: RSW Studio
  * Author URI: http://www.realizzazionesitiweb20.it
  * License: GPL2

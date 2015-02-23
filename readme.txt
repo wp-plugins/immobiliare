@@ -51,6 +51,9 @@ Consente inoltre l'inserimento di gallerie, planimetrie, allegati pdf per capito
 
 = 1.2 =
 * sistemati i campi locali di numero locali
+* 
+= 1.3 =
+* aggiunti campi aggiuntivi in immobile: piscina
 
 
 == Caratteristiche del plugin / Features of the plugin ==

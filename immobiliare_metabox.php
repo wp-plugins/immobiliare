@@ -170,6 +170,12 @@ function your_prefix_register_meta_boxes( $meta_boxes )
 				'std'  => 0,
 			),
 			array(
+				'name' => __( 'Piscina', 'meta-box' ),
+				'id'   => "{$prefix}piscina",
+				'type' => 'checkbox',
+				'std'  => 0,
+			),
+			array(
 				'name' => __( 'Solaio', 'meta-box' ),
 				'id'   => "{$prefix}solaio",
 				'type' => 'checkbox',
