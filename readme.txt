@@ -22,6 +22,7 @@ Plugin per la gestione di immobili per agenzie immobiliari, costruttori e impres
 Permette l'inserimento degli immobili in vendita o in affitto andando a specificare le varie tipologie come appartamenti, ville, villette ecc
 Consente inoltre l'inserimento di gallerie, planimetrie, allegati pdf per capitolati e molto altro.
 
+### Tema di startup al seguente indirizzo http://www.gestionalesoftware.com/prodotti/worpress/plugin-immobiliare-per-wordpress/
 
 ### Immobiliare Plugin by http://www.realizzazionesitiweb20.it
 
@@ -54,6 +55,9 @@ Consente inoltre l'inserimento di gallerie, planimetrie, allegati pdf per capito
 * 
 = 1.3 =
 * aggiunti campi aggiuntivi in immobile: piscina
+
+= 1.4 =
+* tema startup
 
 
 == Caratteristiche del plugin / Features of the plugin ==
