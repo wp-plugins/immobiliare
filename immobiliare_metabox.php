@@ -15,12 +15,9 @@ function your_prefix_register_meta_boxes( $meta_boxes )
 	 * Use underscore (_) at the beginning to make keys hidden
 	 * Alt.: You also can make prefix empty to disable it
 	 */
-	// Better has an underscore as last sign
 	$prefix = 'immobili_';
 
-	// 1st meta box
 	$meta_boxes[] = array(
-		// Meta box id, UNIQUE per meta box. Optional since 4.1.5
 		'id' => 'immobile',
 		'title' => __( 'Immobile', 'meta-box' ),
 		'pages' => array( 'immobili' ),
@@ -43,6 +40,57 @@ function your_prefix_register_meta_boxes( $meta_boxes )
 				'std'  => 0,
 			),
 			array(
+				'name' => __( 'Vista mare/Vicinanza mare', 'meta-box' ),
+				'id'   => "{$prefix}vistamare",
+				'type' => 'checkbox',
+				'std'  => 0,
+			),
+			array(
+				'name' => __( 'No condominio', 'meta-box' ),
+				'id'   => "{$prefix}nocondominio",
+				'type' => 'checkbox',
+				'std'  => 0,
+			),
+			array(
+				// Field name - Will be used as label
+				'name'  => __( 'Rif', 'meta-box' ),
+				'id'    => "{$prefix}rif",
+				'type'  => 'text',
+				'std'   => __( '0', 'meta-box' ),
+				'clone' => false,
+				'min'  => 0,
+				'step' => 1,
+			),
+				array(
+				// Field name - Will be used as label
+				'name'  => __( 'Tipo immobile', 'meta-box' ),
+				'id'    => "{$prefix}tipo",
+				'type'  => 'text',
+				'std'   => __( '0', 'meta-box' ),
+				'clone' => false,
+				'min'  => 0,
+				'step' => 1,
+			),
+			array(
+				'type' => 'heading',
+				'name' => __( 'Stanze', 'meta-box' ),
+				'desc' => __( 'Scegli di quali stanze è composto l\'immobile, se arredato e i metri quadrati', '{$prefix}' ),
+				'id'   => 'stanzeheading', // Not used but needed for plugin
+			),
+			array(
+				'name'     => __( 'Arredato', 'meta-box' ),
+				'id'       => "{$prefix}arredato",
+				'type'     => 'select',
+				'options'  => array(
+					'si' => __( 'si', 'meta-box' ),
+					'-' => __( '-', 'meta-box' ),
+					'parzialmente arredato' => __( 'parzialmente arredato', 'meta-box' ),
+				),
+				'multiple'    => false,
+				'std'         => '-',
+				'placeholder' => __( 'Arredato?', 'meta-box' ),
+			),
+			array(
 				// Field name - Will be used as label
 				'name'  => __( 'mq', 'meta-box' ),
 				'id'    => "{$prefix}mq",
@@ -51,17 +99,6 @@ function your_prefix_register_meta_boxes( $meta_boxes )
 				'clone' => false,
 				'min'  => 0,
 				'step' => 1,
-			),
-			array(
-				// Field name - Will be used as label
-				'name'  => __( 'Prezzo', 'meta-box' ),
-				'id'    => "{$prefix}prezzo",
-				'type'  => 'number',
-				'std'   => __( '0', 'meta-box' ),
-				'clone' => false,
-				'min'  => 0,
-				'step' => 1,
-				'std' => 1,
 			),
 			array(
 				// Field name - Will be used as label
@@ -75,47 +112,14 @@ function your_prefix_register_meta_boxes( $meta_boxes )
 			),
 			array(
 				// Field name - Will be used as label
-				'name'  => __( 'Bagni', 'meta-box' ),
-				'id'    => "{$prefix}bagni",
-				'type'  => 'number',
-				'std'   => __( '1', 'meta-box' ),
-				'clone' => false,
-				'min'  => 0,
-				'step' => 1,
-			),
-			array(
-				// Field name - Will be used as label
-				'name'  => __( 'Camere da letto', 'meta-box' ),
-				'id'    => "{$prefix}cameredaletto",
-				'type'  => 'number',
+				'name'  => __( 'Ingresso', 'meta-box' ),
+				'id'    => "{$prefix}ingresso",
+				'type'  => 'text',
 				'std'   => __( '0', 'meta-box' ),
 				'clone' => false,
 				'min'  => 0,
 				'step' => 1,
 			),
-
-			array(
-				'name'     => __( 'Posto auto', 'meta-box' ),
-				'id'       => "{$prefix}postoauto",
-				'type'     => 'select',
-				// Array of 'value' => 'Label' pairs for select box
-				'options'  => array(
-					'-' => __( '-', 'meta-box' ),
-					'box singolo' => __( 'box singolo', 'meta-box' ),
-					'box doppio' => __( 'box doppio', 'meta-box' ),
-					'box triplo' => __( 'box triplo', 'meta-box' ),
-					'box quadruplo' => __( 'box quadruplo', 'meta-box' ),
-					'posto auto coperto' => __( 'posto auto coperto', 'meta-box' ),
-					'posto auto scoperto' => __( 'posto auto scoperto', 'meta-box' ),
-					'posto auto condominiale' => __( 'posto auto condominiale', 'meta-box' ),
-					'facilità di parcheggio' => __( 'facilità di parcheggio', 'meta-box' ),
-				),
-				// Select multiple values, optional. Default is false.
-				'multiple'    => false,
-				'std'         => 'piano terra',
-				'placeholder' => __( 'Seleziona il piano', 'meta-box' ),
-			),
-      
 			array(
 				'name'     => __( 'Cucina', 'meta-box' ),
 				'id'       => "{$prefix}cucina",
@@ -164,14 +168,28 @@ function your_prefix_register_meta_boxes( $meta_boxes )
 				'placeholder' => __( 'Seleziona il terrazzo', 'meta-box' ),
 			),
 			array(
-				'name' => __( 'Cantina', 'meta-box' ),
-				'id'   => "{$prefix}cantina",
-				'type' => 'checkbox',
-				'std'  => 0,
+				// Field name - Will be used as label
+				'name'  => __( 'Bagni', 'meta-box' ),
+				'id'    => "{$prefix}bagni",
+				'type'  => 'number',
+				'std'   => __( '1', 'meta-box' ),
+				'clone' => false,
+				'min'  => 0,
+				'step' => 1,
 			),
 			array(
-				'name' => __( 'Piscina', 'meta-box' ),
-				'id'   => "{$prefix}piscina",
+				// Field name - Will be used as label
+				'name'  => __( 'Camere da letto', 'meta-box' ),
+				'id'    => "{$prefix}cameredaletto",
+				'type'  => 'number',
+				'std'   => __( '0', 'meta-box' ),
+				'clone' => false,
+				'min'  => 0,
+				'step' => 1,
+			),
+			array(
+				'name' => __( 'Cantina', 'meta-box' ),
+				'id'   => "{$prefix}cantina",
 				'type' => 'checkbox',
 				'std'  => 0,
 			),
@@ -182,14 +200,27 @@ function your_prefix_register_meta_boxes( $meta_boxes )
 				'std'  => 0,
 			),
 			array(
-				'name' => __( 'Idromassaggio', 'meta-box' ),
-				'id'   => "{$prefix}idromassaggio",
+				'name' => __( 'Portico', 'meta-box' ),
+				'id'   => "{$prefix}portico",
+				'type' => 'checkbox',
+				'std'  => 0,
+			),
+
+			array(
+				'type' => 'heading',
+				'name' => __( 'Confort / caratteristiche', 'meta-box' ),
+				'desc' => __( 'Scegli le caratteristiche peculiari e di pregio dell\'immobile', '{$prefix}' ),
+				'id'   => 'stanzeheading', // Not used but needed for plugin
+			),
+			array(
+				'name' => __( 'Piscina', 'meta-box' ),
+				'id'   => "{$prefix}piscina",
 				'type' => 'checkbox',
 				'std'  => 0,
 			),
 			array(
-				'name' => __( 'Portico', 'meta-box' ),
-				'id'   => "{$prefix}portico",
+				'name' => __( 'Idromassaggio', 'meta-box' ),
+				'id'   => "{$prefix}idromassaggio",
 				'type' => 'checkbox',
 				'std'  => 0,
 			),
@@ -198,19 +229,6 @@ function your_prefix_register_meta_boxes( $meta_boxes )
 				'id'   => "{$prefix}ascensore",
 				'type' => 'checkbox',
 				'std'  => 0,
-			),
-			array(
-				'name'     => __( 'Arredato', 'meta-box' ),
-				'id'       => "{$prefix}arredato",
-				'type'     => 'select',
-				'options'  => array(
-					'si' => __( 'si', 'meta-box' ),
-					'-' => __( '-', 'meta-box' ),
-					'parzialmente arredato' => __( 'parzialmente arredato', 'meta-box' ),
-				),
-				'multiple'    => false,
-				'std'         => '-',
-				'placeholder' => __( 'Arredato?', 'meta-box' ),
 			),
 			array(
 				'name' => __( 'Condizionatore', 'meta-box' ),
@@ -223,6 +241,140 @@ function your_prefix_register_meta_boxes( $meta_boxes )
 				'id'   => "{$prefix}satellite",
 				'type' => 'checkbox',
 				'std'  => 0,
+			),
+			array(
+				'name'     => __( 'Giardino', 'meta-box' ),
+				'id'       => "{$prefix}giardino",
+				'type'     => 'select',
+				// Array of 'value' => 'Label' pairs for select box
+				'options'  => array(
+					'di proprietà' => __( 'di proprietà', 'meta-box' ),
+					'uso esclusivo' => __( 'uso esclusivo', 'meta-box' ),
+					'condominiale' => __( 'condominiale', 'meta-box' ),
+					'cortile privato' => __( 'cortile privato', 'meta-box' ),
+					'cortile comune' => __( 'cortile comune', 'meta-box' ),
+					'-' => __( '-', 'meta-box' ),
+				),
+				// Select multiple values, optional. Default is false.
+				'multiple'    => false,
+				'std'         => '-',
+				'placeholder' => __( 'Seleziona il giardino', 'meta-box' ),
+			),
+			array(
+				// Field name - Will be used as label
+				'name'  => __( 'mq giardino', 'meta-box' ),
+				'id'    => "{$prefix}mqgiardino",
+				'type'  => 'number',
+				'std'   => __( '', 'meta-box' ),
+				'clone' => false,
+				'min'  => 0,
+				'step' => 1,
+			),
+
+
+
+			array(
+				'type' => 'heading',
+				'name' => __( 'Valore', 'meta-box' ),
+				'desc' => __( 'Prezzo dell\'immobile, il prezzo precedente se ha subito un ribasso, le spese condominiali', '{$prefix}' ),
+				'id'   => 'valoreheading', // Not used but needed for plugin
+			),
+			array(
+				// Field name - Will be used as label
+				'name'  => __( 'Prezzo precedente', 'meta-box' ),
+				'id'    => "{$prefix}prezzo-precedente",
+				'type'  => 'number',
+				'std'   => __( '0', 'meta-box' ),
+				'clone' => false,
+				'min'  => 0,
+				'step' => 1,
+				'std' => 1,
+			),
+			array(
+				// Field name - Will be used as label
+				'name'  => __( 'Prezzo', 'meta-box' ),
+				'id'    => "{$prefix}prezzo",
+				'type'  => 'number',
+				'std'   => __( '0', 'meta-box' ),
+				'clone' => false,
+				'min'  => 0,
+				'step' => 1,
+				'std' => 1,
+			),
+ 			array(
+				// Field name - Will be used as label
+				'name'  => __( 'Spese condominiali', 'meta-box' ),
+				'id'    => "{$prefix}spese",
+				'type'  => 'number',
+				'std'   => __('0', 'meta-box' ),
+				'clone' => false,
+			),
+			array(
+				'name'     => __( 'Tipo spese', 'meta-box' ),
+				'id'       => "{$prefix}spesetipo",
+				'type'     => 'select',
+				// Array of 'value' => 'Label' pairs for select box
+				'options'  => array(
+					'mensili' => __( 'mensili', 'meta-box' ),
+					'annuali' => __( 'annuali', 'meta-box' ),
+					'nessuna' => __( 'nessuna', 'meta-box' ),
+				),
+				// Select multiple values, optional. Default is false.
+				'multiple'    => false,
+				'std'         => 'mensili',
+				'placeholder' => __( 'Seleziona il tipo di spese', 'meta-box' ),
+			),
+
+
+			array(
+				'type' => 'heading',
+				'name' => __( 'Parcheggi', 'meta-box' ),
+				'desc' => __( 'Posti auto, moto e bici, se interni, esterni o privati', '{$prefix}' ),
+				'id'   => 'parcheggiheading', // Not used but needed for plugin
+			),
+			array(
+				'name'     => __( 'Posto cicli,motocicli', 'meta-box' ),
+				'id'       => "{$prefix}postomotocicli",
+				'type'     => 'select',
+				'options'  => array(
+					'-' => __( '-', 'meta-box' ),
+					'box singolo' => __( 'interno', 'meta-box' ),
+					'box doppio' => __( 'esterno', 'meta-box' ),
+					'privato' => __( 'privato', 'meta-box' ),
+					
+				),
+				'multiple'    => false,
+				'std'         => 'esterno',
+				'placeholder' => __( 'Seleziona il posto cicli motocicli', 'meta-box' ),
+			),
+			array(
+				'name'     => __( 'Posto auto', 'meta-box' ),
+				'id'       => "{$prefix}postoauto",
+				'type'     => 'select',
+				// Array of 'value' => 'Label' pairs for select box
+				'options'  => array(
+					'-' => __( '-', 'meta-box' ),
+					'privato' => __( 'privato', 'meta-box' ),
+					'box singolo' => __( 'box singolo', 'meta-box' ),
+					'box doppio' => __( 'box doppio', 'meta-box' ),
+					'box triplo' => __( 'box triplo', 'meta-box' ),
+					'box quadruplo' => __( 'box quadruplo', 'meta-box' ),
+					'posto auto coperto' => __( 'posto auto coperto', 'meta-box' ),
+					'posto auto scoperto' => __( 'posto auto scoperto', 'meta-box' ),
+					'posto auto condominiale' => __( 'posto auto condominiale', 'meta-box' ),
+					'facilità di parcheggio' => __( 'facilità di parcheggio', 'meta-box' ),
+				),
+				// Select multiple values, optional. Default is false.
+				'multiple'    => false,
+				'std'         => 'piano terra',
+				'placeholder' => __( 'Seleziona il posto auto', 'meta-box' ),
+			),
+      
+			array(
+				'type' => 'heading',
+				'name' => __( 'Struttura dell\'immobile', 'meta-box' ),
+				'desc' => __( 'Composizione e stato del palazzo o dell\'immobile', '{$prefix}' ),
+				'id'   => 'palazzoheading', // Not used but needed for plugin
 			),
 			array(
 				'name'     => __( 'Piano', 'meta-box' ),
@@ -295,57 +447,6 @@ function your_prefix_register_meta_boxes( $meta_boxes )
 				'placeholder' => __( 'Seleziona lo stato', 'meta-box' ),
 			),
 			array(
-				// Field name - Will be used as label
-				'name'  => __( 'Spese condominiali', 'meta-box' ),
-				'id'    => "{$prefix}spese",
-				'type'  => 'number',
-				'std'   => __('0', 'meta-box' ),
-				'clone' => false,
-			),
-			array(
-				'name'     => __( 'Tipo spese', 'meta-box' ),
-				'id'       => "{$prefix}spesetipo",
-				'type'     => 'select',
-				// Array of 'value' => 'Label' pairs for select box
-				'options'  => array(
-					'mensili' => __( 'mensili', 'meta-box' ),
-					'annuali' => __( 'annuali', 'meta-box' ),
-					'nessuna' => __( 'nessuna', 'meta-box' ),
-				),
-				// Select multiple values, optional. Default is false.
-				'multiple'    => false,
-				'std'         => 'mensili',
-				'placeholder' => __( 'Seleziona il tipo di spese', 'meta-box' ),
-			),
-			array(
-				'name'     => __( 'Giardino', 'meta-box' ),
-				'id'       => "{$prefix}giardino",
-				'type'     => 'select',
-				// Array of 'value' => 'Label' pairs for select box
-				'options'  => array(
-					'di proprietà' => __( 'di proprietà', 'meta-box' ),
-					'uso esclusivo' => __( 'uso esclusivo', 'meta-box' ),
-					'condominiale' => __( 'condominiale', 'meta-box' ),
-					'cortile privato' => __( 'cortile privato', 'meta-box' ),
-					'cortile comune' => __( 'cortile comune', 'meta-box' ),
-					'-' => __( '-', 'meta-box' ),
-				),
-				// Select multiple values, optional. Default is false.
-				'multiple'    => false,
-				'std'         => '-',
-				'placeholder' => __( 'Seleziona il giardino', 'meta-box' ),
-			),
-			array(
-				// Field name - Will be used as label
-				'name'  => __( 'mq giardino', 'meta-box' ),
-				'id'    => "{$prefix}mqgiardino",
-				'type'  => 'number',
-				'std'   => __( '', 'meta-box' ),
-				'clone' => false,
-				'min'  => 0,
-				'step' => 1,
-			),
-			array(
 				'name'     => __( 'Riscaldamento', 'meta-box' ),
 				'id'       => "{$prefix}riscaldamento",
 				'type'     => 'select',
@@ -400,6 +501,7 @@ function your_prefix_register_meta_boxes( $meta_boxes )
 			array(
 				'type' => 'heading',
 				'name' => __( 'Gallery', 'meta-box' ),
+				'desc' => __( 'Selezione multipla della galleria delle foto dell\'immobile', '{$prefix}' ),
 				'id'   => 'galleryheading', // Not used but needed for plugin
 			),
 			array(
@@ -410,6 +512,7 @@ function your_prefix_register_meta_boxes( $meta_boxes )
 			array(
 				'type' => 'heading',
 				'name' => __( 'Allegati (solo PDF)', 'meta-box' ),
+				'desc' => __( 'Allegati quali planimetrie, capitolati,  progetti, certificazioni e altro', '{$prefix}' ),
 				'id'   => 'allegatiheading', // Not used but needed for plugin
 			),
 			array(
@@ -421,6 +524,7 @@ function your_prefix_register_meta_boxes( $meta_boxes )
 			array(
 				'type' => 'heading',
 				'name' => __( 'Planimetria', 'meta-box' ),
+				'desc' => __( 'Allega le foto delle planimetrie', '{$prefix}' ),
 				'id'   => 'planimetriaheading', // Not used but needed for plugin
 			),
 			array(
@@ -431,6 +535,7 @@ function your_prefix_register_meta_boxes( $meta_boxes )
 			array(
 				'type' => 'heading',
 				'name' => __( 'Video', 'meta-box' ),
+				'desc' => __( 'Seleziona il video dopo averlo caricato su YouTube', '{$prefix}' ),
 				'id'   => 'videoheading', // Not used but needed for plugin
 			),
 			array(
@@ -441,21 +546,32 @@ function your_prefix_register_meta_boxes( $meta_boxes )
 			array(
 				'type' => 'heading',
 				'name' => __( 'Mappa', 'meta-box' ),
+				'desc' => __( 'Mappa ed ubicazione dell\'immobile', '{$prefix}' ),
 				'id'   => 'mappaheading', // Not used but needed for plugin
 			),
 			array(
 				'id' => "{$prefix}address",
 				'name' => __( 'Indirizzo', 'meta-box' ),
 				'type' => 'text',
-				'std' => __( 'Via Antonio Griffi, 6, 21100 Varese VA, Italia', 'meta-box' ),
+				'std' => __( '', 'meta-box' ),
 			),
 			array(
-				'name' => __( 'Location', 'meta-box' ),
+				// Field name - Will be used as label
+				'name'  => __( 'Zona', 'meta-box' ),
+				'id'    => "{$prefix}zona",
+				'type'  => 'text',
+				'std'   => __( '0', 'meta-box' ),
+				'clone' => false,
+				'min'  => 0,
+				'step' => 1,
+			),
+			array(
+				'name' => __( 'Geolocalizzazione', 'meta-box' ),
 				'id'    => "{$prefix}loc",
 				'std' => '45.8197170,8.8284430',
 				'style' => 'width: 500px; height: 500px',
 				'type'  => 'map',
-				'address_field' => 'address', 
+				'address_field' => "{$prefix}address", 
 			),
 		)
 	);

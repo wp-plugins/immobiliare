@@ -3,14 +3,14 @@
  * Plugin Name: Immobiliare
  * Plugin URI: http://www.realizzazionesitiweb20.it
  * Description: gestionale immobiliare per wordpress
- * Version: 1.4.0
+ * Version: 1.5.0
  * Author: RSW Studio
  * Author URI: http://www.realizzazionesitiweb20.it
  * License: GPL2
  */
  
   defined('ABSPATH') or die("No script kiddies please!");
-	define( 'Immobiliare_Version', '1.4.0' );
+	define( 'Immobiliare_Version', '1.5.0' );
 	define( 'Immobiliare_Directory', dirname( plugin_basename( __FILE__ ) ) );
 	define( 'Immobiliare_Path', plugin_dir_path( __FILE__ ) );
 	define( 'Immobiliare_URL', plugin_dir_url( __FILE__ ) );
@@ -160,8 +160,6 @@
 	}
 	add_action( 'init', 'tassonomia_comune', 0 );
 
-  
-	
 	/* registra il plugin meta-box richiesto */
 	function immobiliare_register_required_plugins() {
     $plugins = array(
@@ -169,6 +167,25 @@
             'name'      => 'Meta Box',
             'slug'      => 'meta-box',
             'required'  => true,
+            'version'            => '4.4.0',
+            'force_activation'   => false,
+            'force_deactivation' => false,
+        ),
+        array(
+            'name'      => 'WP-PageNavi',
+            'slug'      => 'wp-pagenavi',
+            'required'  => true,
+            'version'            => '2.87',
+            'force_activation'   => false,
+            'force_deactivation' => false,
+        ),
+        array(
+            'name'      => 'WordPress SEO by Yoast',
+            'slug'      => 'wordpress-seo',
+            'required'  => true,
+            'version'            => '2.1.1',
+            'force_activation'   => false,
+            'force_deactivation' => false,
         ),
     );
     $config = array(

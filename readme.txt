@@ -3,7 +3,7 @@ Contributors: RSW Studio, Matteo Testoni
 Donate link: http://www.realizzazionesitiweb20.it
 Tags: immobiliare, agenzia immobiliare, agenzie immobiliari, impresa edile, imprese edili, annunci immobiliari, real estate, realestate, apartment, real estate directory, realtor, properties
 Requires at least: 4.0.0
-Tested up to: 4.1
+Tested up to: 4.2.1
 Stable tag: 4.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -44,20 +44,28 @@ Consente inoltre l'inserimento di gallerie, planimetrie, allegati pdf per capito
 
 == Changelog ==
 
+= 1.5 =
+* campi aggiuntivi per vista mare
+
+= 1.4 =
+* tema startup
+
+= 1.3 =
+* aggiunti campi aggiuntivi in immobile: piscina
+
 = 1.0 =
 * versione iniziale
+
+= 1.2 =
+* sistemati i campi locali di numero locali
 
 = 1.1 =
 * aggiunti campi aggiuntivi in immobile
 
-= 1.2 =
-* sistemati i campi locali di numero locali
-* 
-= 1.3 =
-* aggiunti campi aggiuntivi in immobile: piscina
+= 1.0 =
+* versione iniziale
 
-= 1.4 =
-* tema startup
+
 
 
 == Caratteristiche del plugin / Features of the plugin ==
