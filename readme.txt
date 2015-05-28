@@ -3,7 +3,7 @@ Contributors: RSW Studio, Matteo Testoni
 Donate link: http://www.realizzazionesitiweb20.it
 Tags: immobiliare, agenzia immobiliare, agenzie immobiliari, impresa edile, imprese edili, annunci immobiliari, real estate, realestate, apartment, real estate directory, realtor, properties
 Requires at least: 4.0.0
-Tested up to: 4.2.1
+Tested up to: 4.2.2
 Stable tag: 4.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -43,6 +43,14 @@ Consente inoltre l'inserimento di gallerie, planimetrie, allegati pdf per capito
 2. screenshot-2.jpg
 
 == Changelog ==
+
+= 1.7 =
+* aggiunta soggiorno
+* preparazione widget (previsto per 2.0) 
+
+= 1.6 =
+* suddivisione campi per tipologia
+* preparazione opzioni per agenzia immobiliare e impresa edile
 
 = 1.5 =
 * campi aggiuntivi per vista mare

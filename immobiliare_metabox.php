@@ -121,6 +121,19 @@ function your_prefix_register_meta_boxes( $meta_boxes )
 				'step' => 1,
 			),
 			array(
+				'name'     => __( 'Soggiorno', 'meta-box' ),
+				'id'       => "{$prefix}cucina",
+				'type'     => 'select',
+				'options'  => array(
+					'si' => __( 'si', 'meta-box' ),
+					'no' => __( 'no', 'meta-box' ),
+					'doppio' => __( 'doppio', 'meta-box' ),
+				),
+				'multiple'    => false,
+				'std'         => 'abitabile',
+				'placeholder' => __( 'Seleziona il soggiorno/salone', 'meta-box' ),
+			),
+			array(
 				'name'     => __( 'Cucina', 'meta-box' ),
 				'id'       => "{$prefix}cucina",
 				'type'     => 'select',
@@ -430,7 +443,7 @@ function your_prefix_register_meta_boxes( $meta_boxes )
 					'discreto' => __( 'discreto', 'meta-box' ),
 					'sufficiente' => __( 'sufficiente', 'meta-box' ),
 					'da sistemare' => __( 'da sistemare', 'meta-box' ),
-					'da ritrutturare' => __( 'da ritrutturare', 'meta-box' ),
+					'da ristrutturare' => __( 'da ristrutturare', 'meta-box' ),
 					'abitabile' => __( 'abitabile', 'meta-box' ),
 					'occupato' => __( 'occupato', 'meta-box' ),
 					'edificabile' => __( 'edificabile', 'meta-box' ),
@@ -577,5 +590,3 @@ function your_prefix_register_meta_boxes( $meta_boxes )
 	);
 	return $meta_boxes;
 }
-
-
