@@ -44,9 +44,15 @@ Consente inoltre l'inserimento di gallerie, planimetrie, allegati pdf per capito
 
 == Changelog ==
 
+= 1.8.1 =
+* Opzioni completate e attive
+
+= 1.8 =
+* widget completato e attivo
+
 = 1.7 =
 * aggiunta soggiorno
-* preparazione widget (previsto per 2.0) 
+* preparazione widget
 
 = 1.6 =
 * suddivisione campi per tipologia
