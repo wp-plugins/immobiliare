@@ -2,7 +2,7 @@
 Contributors: RSW Studio, Matteo Testoni
 Donate link: http://www.realizzazionesitiweb20.it
 Tags: immobiliare, agenzia immobiliare, agenzie immobiliari, impresa edile, imprese edili, annunci immobiliari, real estate, realestate, apartment, real estate directory, realtor, properties
-Requires at least: 4.0.0
+Requires at least: 4.2.2
 Tested up to: 4.2.2
 Stable tag: 4.0
 License: GPLv2 or later
@@ -29,7 +29,7 @@ Consente inoltre l'inserimento di gallerie, planimetrie, allegati pdf per capito
 == Installation ==
 
 = ENG =
-1. Upload 'immobiliare' directory  to the `/wp-content/plugins/` directory
+1. Upload 'immobiliare' directory  to the '/wp-content/plugins/'' directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 
 = ITA =
@@ -44,8 +44,15 @@ Consente inoltre l'inserimento di gallerie, planimetrie, allegati pdf per capito
 
 == Changelog ==
 
+= 1.9.0 =
+* possibilità di specificare il Virtual Tour
+* nel campo "arredato" aggiunto "non arredato";
+* nel campo "riscaldamento" aggiunto "pompa di calore";
+* nel campo "tipo di riscaldamento" aggiunto "elettrico"
+* problema campo soggiorno/salone
+
 = 1.8.1 =
-* Opzioni completate e attive
+* opzioni completate e attive
 
 = 1.8 =
 * widget completato e attivo
@@ -78,9 +85,6 @@ Consente inoltre l'inserimento di gallerie, planimetrie, allegati pdf per capito
 
 = 1.0 =
 * versione iniziale
-
-
-
 
 == Caratteristiche del plugin / Features of the plugin ==
 

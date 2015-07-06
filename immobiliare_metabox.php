@@ -83,7 +83,7 @@ function your_prefix_register_meta_boxes( $meta_boxes )
 				'type'     => 'select',
 				'options'  => array(
 					'si' => __( 'si', 'meta-box' ),
-					'-' => __( '-', 'meta-box' ),
+					'non arredato' => __( 'non arredato', 'meta-box' ),
 					'parzialmente arredato' => __( 'parzialmente arredato', 'meta-box' ),
 				),
 				'multiple'    => false,
@@ -122,7 +122,7 @@ function your_prefix_register_meta_boxes( $meta_boxes )
 			),
 			array(
 				'name'     => __( 'Soggiorno', 'meta-box' ),
-				'id'       => "{$prefix}cucina",
+				'id'       => "{$prefix}soggiorno",
 				'type'     => 'select',
 				'options'  => array(
 					'si' => __( 'si', 'meta-box' ),
@@ -292,6 +292,17 @@ function your_prefix_register_meta_boxes( $meta_boxes )
 				'desc' => __( 'Prezzo dell\'immobile, il prezzo precedente se ha subito un ribasso, le spese condominiali', '{$prefix}' ),
 				'id'   => 'valoreheading', // Not used but needed for plugin
 			),
+			
+				array(
+				// Field name - Will be used as label
+				'name'  => __( 'Didascalia prezzo', 'meta-box' ),
+				'id'    => "{$prefix}didascalia_prezzo",
+				'type'  => 'text',
+				'std'   => __( '0', 'meta-box' ),
+				'clone' => false,
+				'min'  => 0,
+				'step' => 1,
+			),
 			array(
 				// Field name - Will be used as label
 				'name'  => __( 'Prezzo precedente', 'meta-box' ),
@@ -351,9 +362,10 @@ function your_prefix_register_meta_boxes( $meta_boxes )
 				'type'     => 'select',
 				'options'  => array(
 					'-' => __( '-', 'meta-box' ),
-					'box singolo' => __( 'interno', 'meta-box' ),
-					'box doppio' => __( 'esterno', 'meta-box' ),
+					'interno' => __( 'interno', 'meta-box' ),
+					'esterno' => __( 'esterno', 'meta-box' ),
 					'privato' => __( 'privato', 'meta-box' ),
+					
 					
 				),
 				'multiple'    => false,
@@ -376,6 +388,9 @@ function your_prefix_register_meta_boxes( $meta_boxes )
 					'posto auto scoperto' => __( 'posto auto scoperto', 'meta-box' ),
 					'posto auto condominiale' => __( 'posto auto condominiale', 'meta-box' ),
 					'facilità di parcheggio' => __( 'facilità di parcheggio', 'meta-box' ),
+					'posto interno' => __( 'posto interno', 'meta-box' ),
+					'posto assegnato' => __( 'posto assegnato', 'meta-box' ),
+					'garage' => __( 'garage', 'meta-box' ),
 				),
 				// Select multiple values, optional. Default is false.
 				'multiple'    => false,
@@ -470,6 +485,7 @@ function your_prefix_register_meta_boxes( $meta_boxes )
 					'centralizzato' => __( 'centralizzato', 'meta-box' ),
 					'centralizzato con contacalorie' => __( 'centralizzato con contacalorie', 'meta-box' ),
 					'assente' => __( 'assente', 'meta-box' ),
+					'pompa di calore' => __( 'pompa di calore', 'meta-box' ),
 				),
 				// Select multiple values, optional. Default is false.
 				'multiple'    => false,
@@ -487,6 +503,7 @@ function your_prefix_register_meta_boxes( $meta_boxes )
 					'gpl' => __( 'gpl', 'meta-box' ),
 					'legna' => __( 'legna', 'meta-box' ),
 					'misto' => __( 'misto', 'meta-box' ),
+					'elettrico' => __( 'elettrico', 'meta-box' ),
 				),
 				// Select multiple values, optional. Default is false.
 				'multiple'    => false,
@@ -547,14 +564,20 @@ function your_prefix_register_meta_boxes( $meta_boxes )
 			),
 			array(
 				'type' => 'heading',
-				'name' => __( 'Video', 'meta-box' ),
-				'desc' => __( 'Seleziona il video dopo averlo caricato su YouTube', '{$prefix}' ),
+				'name' => __( 'Video e Virtual Tour', 'meta-box' ),
+				'desc' => __( 'Seleziona il video dopo averlo caricato su YouTube e specifica il Virtual Tour completo di link', '{$prefix}' ),
 				'id'   => 'videoheading', // Not used but needed for plugin
 			),
 			array(
 				'name'  => __( 'Video YouTube', 'meta-box' ),
 				'id'    => "{$prefix}video",
 				'type'  => 'oembed',
+			),
+			array(
+				'name'  => __( 'Link Virtual Tour', 'meta-box' ),
+				'id'    => "{$prefix}virtualtour",
+				'type' => 'text',
+				'std' => __( '', 'meta-box' ),
 			),
 			array(
 				'type' => 'heading',
